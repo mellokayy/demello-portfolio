@@ -10654,7 +10654,7 @@ defineFunctionBuilders({
 
     // Note regarding scriptstyle level.
     // (Sub|super)scripts should not shrink beyond MathML scriptlevel 2 aka \scriptscriptstyle
-    // Ref: https://w3c.github.io/mathml-core/#the-displaystyle-and-scriptlevel-attributes
+    // Ref: https://w3c../mathml-core/#the-displaystyle-and-scriptlevel-attributes
     // (BTW, MathML scriptlevel 2 is equal to Temml level 3.)
     // But Chromium continues to shrink the (sub|super)scripts. So we explicitly set scriptlevel 2.
 

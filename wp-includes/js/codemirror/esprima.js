@@ -971,16 +971,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	            String.fromCharCode(0xD800 + ((cp - 0x10000) >> 10)) +
 	                String.fromCharCode(0xDC00 + ((cp - 0x10000) & 1023));
 	    },
-	    // https://tc39.github.io/ecma262/#sec-white-space
+	    // https://tc39../ecma262/#sec-white-space
 	    isWhiteSpace: function (cp) {
 	        return (cp === 0x20) || (cp === 0x09) || (cp === 0x0B) || (cp === 0x0C) || (cp === 0xA0) ||
 	            (cp >= 0x1680 && [0x1680, 0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008, 0x2009, 0x200A, 0x202F, 0x205F, 0x3000, 0xFEFF].indexOf(cp) >= 0);
 	    },
-	    // https://tc39.github.io/ecma262/#sec-line-terminators
+	    // https://tc39../ecma262/#sec-line-terminators
 	    isLineTerminator: function (cp) {
 	        return (cp === 0x0A) || (cp === 0x0D) || (cp === 0x2028) || (cp === 0x2029);
 	    },
-	    // https://tc39.github.io/ecma262/#sec-names-and-keywords
+	    // https://tc39../ecma262/#sec-names-and-keywords
 	    isIdentifierStart: function (cp) {
 	        return (cp === 0x24) || (cp === 0x5F) ||
 	            (cp >= 0x41 && cp <= 0x5A) ||
@@ -996,7 +996,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            (cp === 0x5C) ||
 	            ((cp >= 0x80) && Regex.NonAsciiIdentifierPart.test(exports.Character.fromCodePoint(cp)));
 	    },
-	    // https://tc39.github.io/ecma262/#sec-literals-numeric-literals
+	    // https://tc39../ecma262/#sec-literals-numeric-literals
 	    isDecimalDigit: function (cp) {
 	        return (cp >= 0x30 && cp <= 0x39); // 0..9
 	    },
@@ -2294,7 +2294,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.lastMarker.column = this.startMarker.column;
 	        }
 	    };
-	    // https://tc39.github.io/ecma262/#sec-primary-expression
+	    // https://tc39../ecma262/#sec-primary-expression
 	    Parser.prototype.parsePrimaryExpression = function () {
 	        var node = this.createNode();
 	        var expr;
@@ -2389,7 +2389,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-array-initializer
+	    // https://tc39../ecma262/#sec-array-initializer
 	    Parser.prototype.parseSpreadElement = function () {
 	        var node = this.createNode();
 	        this.expect('...');
@@ -2424,7 +2424,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.expect(']');
 	        return this.finalize(node, new Node.ArrayExpression(elements));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-object-initializer
+	    // https://tc39../ecma262/#sec-object-initializer
 	    Parser.prototype.parsePropertyMethod = function (params) {
 	        this.context.isAssignmentTarget = false;
 	        this.context.isBindingElement = false;
@@ -2600,7 +2600,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.expect('}');
 	        return this.finalize(node, new Node.ObjectExpression(properties));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-template-literals
+	    // https://tc39../ecma262/#sec-template-literals
 	    Parser.prototype.parseTemplateHead = function () {
 	        assert_1.assert(this.lookahead.head, 'Template literal must start with a template head');
 	        var node = this.createNode();
@@ -2632,7 +2632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.TemplateLiteral(quasis, expressions));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-grouping-operator
+	    // https://tc39../ecma262/#sec-grouping-operator
 	    Parser.prototype.reinterpretExpressionAsPattern = function (expr) {
 	        switch (expr.type) {
 	            case syntax_1.Syntax.Identifier:
@@ -2790,7 +2790,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-left-hand-side-expressions
+	    // https://tc39../ecma262/#sec-left-hand-side-expressions
 	    Parser.prototype.parseArguments = function () {
 	        this.expect('(');
 	        var args = [];
@@ -2974,7 +2974,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-update-expressions
+	    // https://tc39../ecma262/#sec-update-expressions
 	    Parser.prototype.parseUpdateExpression = function () {
 	        var expr;
 	        var startToken = this.lookahead;
@@ -3013,7 +3013,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-unary-operators
+	    // https://tc39../ecma262/#sec-unary-operators
 	    Parser.prototype.parseAwaitExpression = function () {
 	        var node = this.createNode();
 	        this.nextToken();
@@ -3055,14 +3055,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-exp-operator
-	    // https://tc39.github.io/ecma262/#sec-multiplicative-operators
-	    // https://tc39.github.io/ecma262/#sec-additive-operators
-	    // https://tc39.github.io/ecma262/#sec-bitwise-shift-operators
-	    // https://tc39.github.io/ecma262/#sec-relational-operators
-	    // https://tc39.github.io/ecma262/#sec-equality-operators
-	    // https://tc39.github.io/ecma262/#sec-binary-bitwise-operators
-	    // https://tc39.github.io/ecma262/#sec-binary-logical-operators
+	    // https://tc39../ecma262/#sec-exp-operator
+	    // https://tc39../ecma262/#sec-multiplicative-operators
+	    // https://tc39../ecma262/#sec-additive-operators
+	    // https://tc39../ecma262/#sec-bitwise-shift-operators
+	    // https://tc39../ecma262/#sec-relational-operators
+	    // https://tc39../ecma262/#sec-equality-operators
+	    // https://tc39../ecma262/#sec-binary-bitwise-operators
+	    // https://tc39../ecma262/#sec-binary-logical-operators
 	    Parser.prototype.binaryPrecedence = function (token) {
 	        var op = token.value;
 	        var precedence;
@@ -3125,7 +3125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-conditional-operator
+	    // https://tc39../ecma262/#sec-conditional-operator
 	    Parser.prototype.parseConditionalExpression = function () {
 	        var startToken = this.lookahead;
 	        var expr = this.inheritCoverGrammar(this.parseBinaryExpression);
@@ -3143,7 +3143,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-assignment-operators
+	    // https://tc39../ecma262/#sec-assignment-operators
 	    Parser.prototype.checkPatternParam = function (options, param) {
 	        switch (param.type) {
 	            case syntax_1.Syntax.Identifier:
@@ -3250,7 +3250,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	            if (expr.type === ArrowParameterPlaceHolder || this.match('=>')) {
-	                // https://tc39.github.io/ecma262/#sec-arrow-function-definitions
+	                // https://tc39../ecma262/#sec-arrow-function-definitions
 	                this.context.isAssignmentTarget = false;
 	                this.context.isBindingElement = false;
 	                var isAsync = expr.async;
@@ -3325,7 +3325,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-comma-operator
+	    // https://tc39../ecma262/#sec-comma-operator
 	    Parser.prototype.parseExpression = function () {
 	        var startToken = this.lookahead;
 	        var expr = this.isolateCoverGrammar(this.parseAssignmentExpression);
@@ -3343,7 +3343,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return expr;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-block
+	    // https://tc39../ecma262/#sec-block
 	    Parser.prototype.parseStatementListItem = function () {
 	        var statement;
 	        this.context.isAssignmentTarget = true;
@@ -3397,7 +3397,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.expect('}');
 	        return this.finalize(node, new Node.BlockStatement(block));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-let-and-const-declarations
+	    // https://tc39../ecma262/#sec-let-and-const-declarations
 	    Parser.prototype.parseLexicalBinding = function (kind, options) {
 	        var node = this.createNode();
 	        var params = [];
@@ -3452,7 +3452,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.VariableDeclaration(declarations, kind));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-destructuring-binding-patterns
+	    // https://tc39../ecma262/#sec-destructuring-binding-patterns
 	    Parser.prototype.parseBindingRestElement = function (params, kind) {
 	        var node = this.createNode();
 	        this.expect('...');
@@ -3563,7 +3563,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return pattern;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-variable-statement
+	    // https://tc39../ecma262/#sec-variable-statement
 	    Parser.prototype.parseVariableIdentifier = function (kind) {
 	        var node = this.createNode();
 	        var token = this.nextToken();
@@ -3626,20 +3626,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.VariableDeclaration(declarations, 'var'));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-empty-statement
+	    // https://tc39../ecma262/#sec-empty-statement
 	    Parser.prototype.parseEmptyStatement = function () {
 	        var node = this.createNode();
 	        this.expect(';');
 	        return this.finalize(node, new Node.EmptyStatement());
 	    };
-	    // https://tc39.github.io/ecma262/#sec-expression-statement
+	    // https://tc39../ecma262/#sec-expression-statement
 	    Parser.prototype.parseExpressionStatement = function () {
 	        var node = this.createNode();
 	        var expr = this.parseExpression();
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.ExpressionStatement(expr));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-if-statement
+	    // https://tc39../ecma262/#sec-if-statement
 	    Parser.prototype.parseIfClause = function () {
 	        if (this.context.strict && this.matchKeyword('function')) {
 	            this.tolerateError(messages_1.Messages.StrictFunction);
@@ -3667,7 +3667,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.IfStatement(test, consequent, alternate));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-do-while-statement
+	    // https://tc39../ecma262/#sec-do-while-statement
 	    Parser.prototype.parseDoWhileStatement = function () {
 	        var node = this.createNode();
 	        this.expectKeyword('do');
@@ -3689,7 +3689,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.DoWhileStatement(body, test));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-while-statement
+	    // https://tc39../ecma262/#sec-while-statement
 	    Parser.prototype.parseWhileStatement = function () {
 	        var node = this.createNode();
 	        var body;
@@ -3709,8 +3709,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.WhileStatement(test, body));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-for-statement
-	    // https://tc39.github.io/ecma262/#sec-for-in-and-for-of-statements
+	    // https://tc39../ecma262/#sec-for-statement
+	    // https://tc39../ecma262/#sec-for-in-and-for-of-statements
 	    Parser.prototype.parseForStatement = function () {
 	        var init = null;
 	        var test = null;
@@ -3857,7 +3857,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            forIn ? this.finalize(node, new Node.ForInStatement(left, right, body)) :
 	                this.finalize(node, new Node.ForOfStatement(left, right, body));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-continue-statement
+	    // https://tc39../ecma262/#sec-continue-statement
 	    Parser.prototype.parseContinueStatement = function () {
 	        var node = this.createNode();
 	        this.expectKeyword('continue');
@@ -3876,7 +3876,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.ContinueStatement(label));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-break-statement
+	    // https://tc39../ecma262/#sec-break-statement
 	    Parser.prototype.parseBreakStatement = function () {
 	        var node = this.createNode();
 	        this.expectKeyword('break');
@@ -3895,7 +3895,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.BreakStatement(label));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-return-statement
+	    // https://tc39../ecma262/#sec-return-statement
 	    Parser.prototype.parseReturnStatement = function () {
 	        if (!this.context.inFunctionBody) {
 	            this.tolerateError(messages_1.Messages.IllegalReturn);
@@ -3908,7 +3908,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.ReturnStatement(argument));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-with-statement
+	    // https://tc39../ecma262/#sec-with-statement
 	    Parser.prototype.parseWithStatement = function () {
 	        if (this.context.strict) {
 	            this.tolerateError(messages_1.Messages.StrictModeWith);
@@ -3928,7 +3928,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.WithStatement(object, body));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-switch-statement
+	    // https://tc39../ecma262/#sec-switch-statement
 	    Parser.prototype.parseSwitchCase = function () {
 	        var node = this.createNode();
 	        var test;
@@ -3978,7 +3978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.context.inSwitch = previousInSwitch;
 	        return this.finalize(node, new Node.SwitchStatement(discriminant, cases));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-labelled-statements
+	    // https://tc39../ecma262/#sec-labelled-statements
 	    Parser.prototype.parseLabelledStatement = function () {
 	        var node = this.createNode();
 	        var expr = this.parseExpression();
@@ -4019,7 +4019,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, statement);
 	    };
-	    // https://tc39.github.io/ecma262/#sec-throw-statement
+	    // https://tc39../ecma262/#sec-throw-statement
 	    Parser.prototype.parseThrowStatement = function () {
 	        var node = this.createNode();
 	        this.expectKeyword('throw');
@@ -4030,7 +4030,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.ThrowStatement(argument));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-try-statement
+	    // https://tc39../ecma262/#sec-try-statement
 	    Parser.prototype.parseCatchClause = function () {
 	        var node = this.createNode();
 	        this.expectKeyword('catch');
@@ -4072,14 +4072,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.TryStatement(block, handler, finalizer));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-debugger-statement
+	    // https://tc39../ecma262/#sec-debugger-statement
 	    Parser.prototype.parseDebuggerStatement = function () {
 	        var node = this.createNode();
 	        this.expectKeyword('debugger');
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.DebuggerStatement());
 	    };
-	    // https://tc39.github.io/ecma262/#sec-ecmascript-language-statements-and-declarations
+	    // https://tc39../ecma262/#sec-ecmascript-language-statements-and-declarations
 	    Parser.prototype.parseStatement = function () {
 	        var statement;
 	        switch (this.lookahead.type) {
@@ -4163,7 +4163,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return statement;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-function-definitions
+	    // https://tc39../ecma262/#sec-function-definitions
 	    Parser.prototype.parseFunctionSourceElements = function () {
 	        var node = this.createNode();
 	        this.expect('{');
@@ -4407,7 +4407,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return isAsync ? this.finalize(node, new Node.AsyncFunctionExpression(id, params, body)) :
 	            this.finalize(node, new Node.FunctionExpression(id, params, body, isGenerator));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-directive-prologues-and-the-use-strict-directive
+	    // https://tc39../ecma262/#sec-directive-prologues-and-the-use-strict-directive
 	    Parser.prototype.parseDirective = function () {
 	        var token = this.lookahead;
 	        var node = this.createNode();
@@ -4447,7 +4447,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return body;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-method-definitions
+	    // https://tc39../ecma262/#sec-method-definitions
 	    Parser.prototype.qualifiedPropertyName = function (token) {
 	        switch (token.type) {
 	            case 3 /* Identifier */:
@@ -4504,7 +4504,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.context.allowYield = previousAllowYield;
 	        return this.finalize(node, new Node.FunctionExpression(null, params.params, method, isGenerator));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-generator-function-definitions
+	    // https://tc39../ecma262/#sec-generator-function-definitions
 	    Parser.prototype.isStartOfExpression = function () {
 	        var start = true;
 	        var value = this.lookahead.value;
@@ -4547,7 +4547,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.YieldExpression(argument, delegate));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-class-definitions
+	    // https://tc39../ecma262/#sec-class-definitions
 	    Parser.prototype.parseClassElement = function (hasConstructor) {
 	        var token = this.lookahead;
 	        var node = this.createNode();
@@ -4696,8 +4696,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.context.strict = previousStrict;
 	        return this.finalize(node, new Node.ClassExpression(id, superClass, classBody));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-scripts
-	    // https://tc39.github.io/ecma262/#sec-modules
+	    // https://tc39../ecma262/#sec-scripts
+	    // https://tc39../ecma262/#sec-modules
 	    Parser.prototype.parseModule = function () {
 	        this.context.strict = true;
 	        this.context.isModule = true;
@@ -4716,7 +4716,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return this.finalize(node, new Node.Script(body));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-imports
+	    // https://tc39../ecma262/#sec-imports
 	    Parser.prototype.parseModuleSpecifier = function () {
 	        var node = this.createNode();
 	        if (this.lookahead.type !== 8 /* StringLiteral */) {
@@ -4834,7 +4834,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.consumeSemicolon();
 	        return this.finalize(node, new Node.ImportDeclaration(specifiers, src));
 	    };
-	    // https://tc39.github.io/ecma262/#sec-exports
+	    // https://tc39../ecma262/#sec-exports
 	    Parser.prototype.parseExportSpecifier = function () {
 	        var node = this.createNode();
 	        var local = this.parseIdentifierName();
@@ -5158,7 +5158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (message === void 0) { message = messages_1.Messages.UnexpectedTokenIllegal; }
 	        this.errorHandler.tolerateError(this.index, this.lineNumber, this.index - this.lineStart + 1, message);
 	    };
-	    // https://tc39.github.io/ecma262/#sec-comments
+	    // https://tc39../ecma262/#sec-comments
 	    Scanner.prototype.skipSingleLineComment = function (offset) {
 	        var comments = [];
 	        var start, loc;
@@ -5352,7 +5352,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        return comments;
 	    };
-	    // https://tc39.github.io/ecma262/#sec-future-reserved-words
+	    // https://tc39../ecma262/#sec-future-reserved-words
 	    Scanner.prototype.isFutureReservedWord = function (id) {
 	        switch (id) {
 	            case 'enum':
@@ -5383,7 +5383,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Scanner.prototype.isRestrictedWord = function (id) {
 	        return id === 'eval' || id === 'arguments';
 	    };
-	    // https://tc39.github.io/ecma262/#sec-keywords
+	    // https://tc39../ecma262/#sec-keywords
 	    Scanner.prototype.isKeyword = function (id) {
 	        switch (id.length) {
 	            case 2:
@@ -5548,7 +5548,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            octal: octal
 	        };
 	    };
-	    // https://tc39.github.io/ecma262/#sec-names-and-keywords
+	    // https://tc39../ecma262/#sec-names-and-keywords
 	    Scanner.prototype.scanIdentifier = function () {
 	        var type;
 	        var start = this.index;
@@ -5586,7 +5586,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            end: this.index
 	        };
 	    };
-	    // https://tc39.github.io/ecma262/#sec-punctuators
+	    // https://tc39../ecma262/#sec-punctuators
 	    Scanner.prototype.scanPunctuator = function () {
 	        var start = this.index;
 	        // Check for most common single-character punctuators.
@@ -5666,7 +5666,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            end: this.index
 	        };
 	    };
-	    // https://tc39.github.io/ecma262/#sec-literals-numeric-literals
+	    // https://tc39../ecma262/#sec-literals-numeric-literals
 	    Scanner.prototype.scanHexLiteral = function (start) {
 	        var num = '';
 	        while (!this.eof()) {
@@ -5836,7 +5836,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            end: this.index
 	        };
 	    };
-	    // https://tc39.github.io/ecma262/#sec-literals-string-literals
+	    // https://tc39../ecma262/#sec-literals-string-literals
 	    Scanner.prototype.scanStringLiteral = function () {
 	        var start = this.index;
 	        var quote = this.source[start];
@@ -5938,7 +5938,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            end: this.index
 	        };
 	    };
-	    // https://tc39.github.io/ecma262/#sec-template-literal-lexical-components
+	    // https://tc39../ecma262/#sec-template-literal-lexical-components
 	    Scanner.prototype.scanTemplate = function () {
 	        var cooked = '';
 	        var terminated = false;
@@ -6066,7 +6066,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            end: this.index
 	        };
 	    };
-	    // https://tc39.github.io/ecma262/#sec-literals-regular-expression-literals
+	    // https://tc39../ecma262/#sec-literals-regular-expression-literals
 	    Scanner.prototype.testRegExp = function (pattern, flags) {
 	        // The BMP character to use as a replacement for astral symbols when
 	        // translating an ES6 "u"-flagged pattern to an ES5-compatible
@@ -6120,7 +6120,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            str += ch;
 	            if (ch === '\\') {
 	                ch = this.source[this.index++];
-	                // https://tc39.github.io/ecma262/#sec-literals-regular-expression-literals
+	                // https://tc39../ecma262/#sec-literals-regular-expression-literals
 	                if (character_1.Character.isLineTerminator(ch.charCodeAt(0))) {
 	                    this.throwUnexpectedToken(messages_1.Messages.UnterminatedRegExp);
 	                }
