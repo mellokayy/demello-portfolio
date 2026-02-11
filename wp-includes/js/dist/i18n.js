@@ -577,7 +577,7 @@ function pluralForms( expression ) {
 /**
  * Jed-formatted locale data.
  *
- * @see http://messageformat../Jed/
+ * @see http://messageformat.github.io/Jed/
  *
  * @typedef {{[domain:string]:TanninLocaleDomain}} TanninLocaleData
  */

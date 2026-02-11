@@ -5061,7 +5061,7 @@
             result = Ctor.apply(thisBinding, args);
 
         // Mimic the constructor's `return` behavior.
-        // See https://es5../#x13.2.2 for more details.
+        // See https://es5.github.io/#x13.2.2 for more details.
         return isObject(result) ? result : thisBinding;
       };
     }
@@ -14524,7 +14524,7 @@
      * hexadecimal, in which case a `radix` of `16` is used.
      *
      * **Note:** This method aligns with the
-     * [ES5 implementation](https://es5../#x15.1.2.2) of `parseInt`.
+     * [ES5 implementation](https://es5.github.io/#x15.1.2.2) of `parseInt`.
      *
      * @static
      * @memberOf _

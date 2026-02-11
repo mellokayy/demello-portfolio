@@ -19066,9 +19066,9 @@ const REGEXP_INVALID_ATTRIBUTE_NAME = /[\u007F-\u009F "'>/="\uFDD0-\uFDEF]/;
  * named, decimal, or hexadecimal character references are escaped. Invalid
  * named references (i.e. ambiguous ampersand) are still permitted.
  *
- * @see https://w3c../html/syntax.html#character-references
- * @see https://w3c../html/syntax.html#ambiguous-ampersand
- * @see https://w3c../html/syntax.html#named-character-references
+ * @see https://w3c.github.io/html/syntax.html#character-references
+ * @see https://w3c.github.io/html/syntax.html#ambiguous-ampersand
+ * @see https://w3c.github.io/html/syntax.html#named-character-references
  *
  * @param {string} value Original string.
  *
@@ -19103,7 +19103,7 @@ function escapeLessThan(value) {
 /**
  * Returns an escaped attribute value.
  *
- * @see https://w3c../html/syntax.html#elements-attributes
+ * @see https://w3c.github.io/html/syntax.html#elements-attributes
  *
  * "[...] the text cannot contain an ambiguous ampersand [...] must not contain
  * any literal U+0022 QUOTATION MARK characters (")"
@@ -19127,7 +19127,7 @@ function escapeAttribute(value) {
 /**
  * Returns an escaped HTML element value.
  *
- * @see https://w3c../html/syntax.html#writing-html-documents-elements
+ * @see https://w3c.github.io/html/syntax.html#writing-html-documents-elements
  *
  * "the text must not contain the character U+003C LESS-THAN SIGN (<) or an
  * ambiguous ampersand."

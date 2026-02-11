@@ -49171,7 +49171,7 @@ function isDate(value) {
  * Argument is converted to Date using `toDate`. See [toDate](https://date-fns.org/docs/toDate)
  * Invalid Date is a Date, whose time value is NaN.
  *
- * Time value of Date: http://es5../#x15.9.1.1
+ * Time value of Date: http://es5.github.io/#x15.9.1.1
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
@@ -68514,7 +68514,7 @@ function isDate_isDate(value) {
  * Argument is converted to Date using `toDate`. See [toDate](https://date-fns.org/docs/toDate)
  * Invalid Date is a Date, whose time value is NaN.
  *
- * Time value of Date: http://es5../#x15.9.1.1
+ * Time value of Date: http://es5.github.io/#x15.9.1.1
  *
  * @param date - The date to check
  *

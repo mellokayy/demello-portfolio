@@ -60040,7 +60040,7 @@ function createDOMPurify() {
   const getParentNode = lookupGetter(ElementPrototype, 'parentNode');
   // As per issue #47, the web-components registry is inherited by a
   // new document created via createHTMLDocument. As per the spec
-  // (http://w3c../webcomponents/spec/custom/#creating-and-passing-registries)
+  // (http://w3c.github.io/webcomponents/spec/custom/#creating-and-passing-registries)
   // a new empty registry is used when creating a template contents owner
   // document, so we use that as our parent document to ensure nothing
   // is inherited.

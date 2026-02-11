@@ -2960,7 +2960,7 @@
       // These are reserved SVG and MathML elements.
       // We don't mind this list too much because we expect it to never grow.
       // The alternative is to track the namespace in a few places which is convoluted.
-      // https://w3c../webcomponents/spec/custom/#custom-elements-core-concepts
+      // https://w3c.github.io/webcomponents/spec/custom/#custom-elements-core-concepts
       case 'annotation-xml':
       case 'color-profile':
       case 'font-face':
